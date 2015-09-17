@@ -188,15 +188,21 @@
         NSLog(@"抢购请求成功");
         NSDictionary *dataDic = [responseBody objectForKey:@"data"];
         
-        RushDataModel *model = [MTLJSONAdapter modelOfClass:[RushDataModel class]
+        RushDataModel *rushDataM = [MTLJSONAdapter modelOfClass:[RushDataModel class]
                                          fromJSONDictionary:dataDic
                                                       error:nil];
         
-        RushDataModel *rushDataM = [RushDataModel objectWithKeyValues:dataDic];
+        //RushDataModel *rushDataM = [RushDataModel objectWithKeyValues:dataDic];
+        
         [_rushArray removeAllObjects];
         
         for (int i = 0; i < rushDataM.deals.count; i++) {
-            RushDealsModel *deals = [RushDealsModel objectWithKeyValues:rushDataM.deals[i]];
+            
+            RushDealsModel *deals = [MTLJSONAdapter modelOfClass:[RushDealsModel class]
+                                               fromJSONDictionary: rushDataM.deals[i]
+                                                            error:nil];
+            
+            //RushDealsModel *deals = [RushDealsModel objectWithKeyValues:rushDataM.deals[i]];
             [_rushArray addObject:deals];
         }
         [self.tableView reloadData];
@@ -349,6 +355,7 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSLog(@"滑动！");
     if (indexPath.section == 0) {
         static NSString *cellIndentifier = @"menucell";
         HomeMenuCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIndentifier];
@@ -486,7 +493,6 @@
         
         NSString *urlStr = [NSString stringWithFormat:@"http://ismart.meituan.com/?ci=1&f=iphone&msid=48E2B810-805D-4821-9CDD-D5C9E01BC98A2015-07-03-16-08715&token=p09ukJltGhla4y5Jryb1jgCdKjsAAAAAsgAAADHFD3UYGxaY2FlFPQXQj2wCyCrhhn7VVB-KpG_U3-clHlvsLM8JRrnZK35y8UU3DQ&userid=10086&utm_campaign=%@&utm_content=4B7C0B46F5B0527D55EA292904FD7E12E48FB7BEA8DF50BFE7828AF7F20BB08D&utm_medium=iphone&utm_source=AppStore&utm_term=5.7&uuid=4B8C0B46F5B0527D55EA292904FD7E12E48FB7BEA8DF50BFE7828AF7F20BB08D&version_name=5.7&lat=%f&lng=%f",campaignStr, delegate.latitude,delegate.longitude];
         
-        NSLog(@"urlStr:%@",urlStr);
         HotQueueViewController *hotQVC = [[HotQueueViewController alloc] init];
         hotQVC.urlStr = urlStr;
         [self.navigationController pushViewController:hotQVC animated:YES];

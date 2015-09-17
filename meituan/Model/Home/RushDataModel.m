@@ -11,7 +11,8 @@
 @implementation RushDataModel
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
     return @{
-             @"type": @"listJumpToTouch"
+             @"type": @"listJumpToTouch",
+             @"deals": @"deals"
              };
 }
 @end

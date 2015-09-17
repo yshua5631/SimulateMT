@@ -76,7 +76,7 @@
     self.shopNameLabel.text = recommendData.mname;
     self.shopInfoLabel.text = [NSString stringWithFormat:@"[%@]%@",recommendData.range,recommendData.title];
     NSString *priceStr = [NSString stringWithFormat:@"%d元",[recommendData.price intValue]];
-    NSLog(@"%@",priceStr);
+    NSLog(@"推荐%@",priceStr);
     CGSize labelSize = [priceStr sizeWithFont:[UIFont systemFontOfSize:17] constrainedToSize:CGSizeMake(200, 20) lineBreakMode:NSLineBreakByWordWrapping];
     self.priceLabel.text = priceStr;
     self.priceLabel.frame = CGRectMake(100, 75, labelSize.width+10, 20);

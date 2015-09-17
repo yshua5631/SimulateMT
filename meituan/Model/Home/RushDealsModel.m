@@ -12,20 +12,30 @@
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
     return @{
-             @"date": @"dt",
-             @"locationName": @"name",
-             @"humidity": @"main.humidity",
-             @"temperature": @"main.temp",
-             @"tempHigh": @"main.temp_max",
-             @"tempLow": @"main.temp_min",
-             @"sunrise": @"sys.sunrise",
-             @"sunset": @"sys.sunset",
-             @"conditionDescription": @"weather.description",
-             @"condition": @"weather.main",
-             @"icon": @"weather.icon",
-             @"windBearing": @"wind.deg",
-             @"windSpeed": @"wind.speed",
-             };
+              @"attrJson": @"attrJson",
+              @"brandname": @"brandname",
+              @"campaignprice": @"campaignprice",
+              @"campaigns": @"campaigns",
+              @"cate": @"cate",
+              @"cateDesc": @"cateDesc",
+               @"coupontitle": @"coupontitle",
+               @"ctype": @"ctype",
+              @"dt": @"dt",
+              @"festcanuse": @"festcanuse",
+              @"id": @"id",
+              @"imgurl": @"imgurl",
+              @"mealcount": @"mealcount",
+              @"mdcLogoUrl": @"mdcLogoUrl",
+              @"nobooking": @"nobooking",
+              @"range": @"range",
+              @"rating": @"rating",
+              @"smstitle": @"smstitle",
+              @"squareimgurl": @"squareimgurl",
+              @"status": @"status",
+               @"subcate": @"subcate",
+               @"title": @"title",
+              @"value": @"value"
+        };
 }
 
 @end

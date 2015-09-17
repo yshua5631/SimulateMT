@@ -24,8 +24,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         //大图
-//        NSLog(@"==%f   %f",[self bounds].size.width,[self bounds].size.height);
-//        NSLog(@"++%f",screen_width);
+
         _bigImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, screen_width, 160)];
         [_bigImageView setImage:[UIImage imageNamed:@"bg_customReview_image_default"]];
         [self addSubview:_bigImageView];
