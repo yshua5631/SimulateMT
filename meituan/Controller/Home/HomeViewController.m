@@ -122,6 +122,7 @@
 }
 
 -(void)initTableView{
+    //20 代表 状态栏 44 代表导航栏 49 代表标签栏
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, screen_width, screen_height-49-64) style:UITableViewStyleGrouped];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -131,6 +132,7 @@
     
 }
 
+//MJRefresh 进行下拉刷新
 -(void)setUpTableView{
     //添加下拉的动画图片
     //设置下拉刷新回调
@@ -159,7 +161,7 @@
     [self.tableView.gifHeader beginRefreshing];
 }
 
-
+// 高德地图
 -(void)OnMapBtnTap:(UIButton *)sender{
     JZMapViewControlle *JZMapVC = [[JZMapViewControlle alloc] init];
     [self.navigationController pushViewController:JZMapVC animated:YES];
@@ -283,11 +285,7 @@
 
 #pragma mark - UITableViewDataSource
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    //    if (_rushArray.count == 0) {
-    //        return 2;
-    //    }else{
-    //        return 3;
-    //    }
+    
     return 5;
 }
 
@@ -330,6 +328,7 @@
     }
 }
 
+// 设置Header和Header之间的间距
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     if (section == 0) {
         return 1;
@@ -344,13 +343,13 @@
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, screen_width, 10)];
     headerView.backgroundColor = RGB(239, 239, 244);
-    //    headerView.backgroundColor = [UIColor redColor];
+    //headerView.backgroundColor = [UIColor grayColor];
     return headerView;
 }
 -(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
     UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, screen_width, 0)];
+    //footerView.backgroundColor = [UIColor grayColor];
     footerView.backgroundColor = RGB(239, 239, 244);
-    //    footerView.backgroundColor = [UIColor yellowColor];
     return footerView;
 }
 
