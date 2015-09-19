@@ -28,6 +28,7 @@ PODS:
   - MBProgressHUD (0.9.1)
   - MJExtension (2.1.0)
   - MJRefresh (1.4.6)
+  - Objection (1.5)
   - ReactiveCocoa (2.5):
     - ReactiveCocoa/UI (= 2.5)
   - ReactiveCocoa/Core (2.5):
@@ -49,6 +50,7 @@ DEPENDENCIES:
   - MBProgressHUD (~> 0.9.1)
   - MJExtension
   - MJRefresh
+  - Objection
   - ReactiveCocoa
   - SDWebImage
   - SVProgressHUD
@@ -62,6 +64,7 @@ SPEC CHECKSUMS:
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   MJExtension: d4fd481247b262b59cf8cdf5815661cff460aaa2
   MJRefresh: 2eaa3fd8f67fbb86497840fb0167446f7eb61dc7
+  Objection: c016a7d5a2bd9d581f2ce5d40e5ecd83acea7cf9
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
   SDWebImage: 71b7cdc1d1721d6a82ed62889030225f2c249e29
   SVProgressHUD: 748080e4f36e603f6c02aec292664239df5279c1
